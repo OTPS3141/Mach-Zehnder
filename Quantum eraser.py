@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 Quantum eraser data analysis
 '''
 
+### Hallo, Lucy!
+
 ### Plot theory 
 
 x = np.linspace(0, np.pi, 100)
