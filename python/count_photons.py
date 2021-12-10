@@ -116,7 +116,7 @@ def count_TTL(TTL):
 
     return counter
 
-print(count_TTL(A))
+print(count_TTL(A), "TTL rectangles were counted")
 
 
 ### Count the TTL rect in bins
@@ -155,11 +155,13 @@ def count_bins(n):
     
     return photons, entries, bin_edges, patches
 
+count_bins(5)
+
 
 # photons, entries, bin_edges, patches = count_bins(30) 
-'''
-Compare different amount of bins
-'''
-for i in [5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100]:
+# '''
+# Compare different amount of bins
+# '''
+# for i in [5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100]:
     
-    count_bins(i)
+#     count_bins(i)
