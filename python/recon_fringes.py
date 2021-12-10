@@ -1,15 +1,8 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Nov 27 14:20:15 2021
-
-@author: OTPS
-"""
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
-from read_bin import read_data
+from read_bin import read
 
 
 
@@ -17,11 +10,11 @@ data_list = []
 
 for i in range(1, 10):
     
-    data_list.append(f"20211119-000{i}.csv")
+    data_list.append(f"Data\data_reconstruction_of_fringes/20211119-000{i}.csv")
     
 for i in range(10, 21):
     
-    data_list.append(f"20211119-00{i}.csv")
+    data_list.append(f"Data\data_reconstruction_of_fringes/20211119-00{i}.csv")
     
         
 t_list = []
@@ -29,8 +22,10 @@ A_list = []
 B_list = []
 
 for i in range(0, 20):
+
+    df = read(data_list[i])
     
-    t, A, B = read_data(data_list[i])
+    t, A, B = df.read_data()
     
     t_list.append(t)
     A_list.append(A)
