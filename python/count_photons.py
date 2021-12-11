@@ -141,11 +141,6 @@ def count_bins(n):
     
     photons = np.array(counter_bin)
     
-    plt.figure()
-    entries, bin_edges, patches = plt.hist(photons, bins = n, density = True, label = "Data")
-    plt.title(f"Histogram for {n} bins with duration {np.round(1000 / n, 2)} ms")
-    plt.show()
-    
     mean = np.mean(photons)
     
     sigma = np.std(photons)
@@ -153,15 +148,19 @@ def count_bins(n):
     print(*["Mean:", mean, " and standard deviation:", sigma, "for", n, "bins"])
     
     
-    return photons, entries, bin_edges, patches
-
-count_bins(5)
+    return photons
 
 
-# photons, entries, bin_edges, patches = count_bins(30) 
-# '''
-# Compare different amount of bins
-# '''
-# for i in [5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100]:
+
+
+'''
+Compare different amount of bins
+'''
+for i in [5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100]:
     
-#     count_bins(i)
+    photons = count_bins(i)
+    plt.figure()
+    plt.hist(photons, bins = i, density = True, label = "Data")
+    plt.title(f"Histogram for {i} bins with duration {np.round(1000 / i, 2)} ms")
+
+plt.show()

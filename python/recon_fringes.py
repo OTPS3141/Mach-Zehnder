@@ -67,6 +67,8 @@ merge_A = merge_A / 20
 plt.figure()
 plt.plot(t_list[0][start:end], merge_A ,'-', label = "PM signal")
 plt.plot(t_list[0][start:end], B_list[0][start:end] ,'-', label = "Piezo ramp", color = 'red')
+plt.xlabel("Time [ms]")
+plt.ylabel("Voltage [V]")
 plt.legend(loc="best")
 plt.show()
 
