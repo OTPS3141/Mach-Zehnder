@@ -20,14 +20,17 @@ B = np.array(PZT_data.channel).astype(np.float)
 
 
 fig,ax = plt.subplots()
-ax.plot(t, A)
+ax.plot(t, A, label="PD signal")
 ax.set_xlabel("Time [s]")
 ax.set_ylabel("Voltage [V]")
+plt.legend(loc="best")
+
 ax2 = ax.twinx()
 
-ax2.plot(t, B, color='red')
+ax2.plot(t, B, color='red', label="PZT TTL")
 ax.set_xlabel("Time [s]")
 ax.set_ylabel("Voltage [V]")
+plt.legend(loc="best")
 plt.show()
 
 """ plt.figure()
