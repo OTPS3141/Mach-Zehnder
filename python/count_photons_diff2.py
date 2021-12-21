@@ -1,17 +1,22 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from read_bin import read, plot
+from read_bin_2 import read2
 from scipy.optimize import curve_fit
 from scipy.special import factorial
 from scipy.stats import poisson
 import matplotlib.ticker as mticker
 
+data_list = []
+
+for i in range(1,5):
+
+    data_list.append(read2(f"Data\Photon statistics\statistics\pm_pos{i+1}_1\pm_pos{i+1}_1_1.csv"))
 
 '''
 Read data from statistics
 '''
 
-time, A, B = read(f"Data\Photon statistics\statistics\pm_pos1_1\pm_pos1_1_1.csv").read_data()
+time, B = data_list[0].read_data2()
 
 N = time.size
 
